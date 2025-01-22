@@ -1,0 +1,48 @@
+.round-button {
+    width: 60px;
+    height: 60px;
+    background-color: #007bff; /* Azul */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    color: white;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    position: absolute;
+    right: 50px;
+    bottom: 40px;
+    z-index: 1;
+  }
+  
+  .round-button i {
+    font-size: 24px;
+  }
+
+  .pulse::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #007bff;
+    border-radius: 50%;
+    z-index: -1;
+    opacity: .5;
+    animation: pulser 1.5s infinite;
+  }
+
+  @keyframes pulser {
+    0% {
+      opacity: 2;
+    }
+    50% {
+      scale: 1.3;
+      opacity: .5;
+    }
+  }
+  
+  
