@@ -1,4 +1,4 @@
-const baseURL = process.env.REACT_APP_API_URL;
+const baseURL = 'https://mern-calendar-backend-production-91f0.up.railway.app/api';
 
 const fetchWithoutToken = (endpoint, data, method='GET') => {
     const url = `${baseURL}/${endpoint}`;
