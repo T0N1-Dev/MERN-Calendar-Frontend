@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/MERN-Calendar-Frontend/static/css/main.8530b00a.css",
+    "main.js": "/MERN-Calendar-Frontend/static/js/main.40f3b540.js",
+    "index.html": "/MERN-Calendar-Frontend/index.html",
+    "main.8530b00a.css.map": "/MERN-Calendar-Frontend/static/css/main.8530b00a.css.map",
+    "main.40f3b540.js.map": "/MERN-Calendar-Frontend/static/js/main.40f3b540.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8530b00a.css",
+    "static/js/main.40f3b540.js"
+  ]
+}
