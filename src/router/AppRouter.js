@@ -22,7 +22,7 @@ export const AppRouter = () => {
   }
 
   return (
-    <BrowserRouter basename='/MERN-Calendar-Frontend'>
+    <BrowserRouter>
       <Routes>
         <Route
           path='/login' 
