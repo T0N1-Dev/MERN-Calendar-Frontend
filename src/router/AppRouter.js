@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import { HashRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { LoginScreen } from '../components/auth/LoginScreen'
 import { RegisterScreen } from '../components/auth/RegisterScreen'
 import { CalendarScreen } from '../components/calendar/CalendarScreen'
@@ -22,7 +22,7 @@ export const AppRouter = () => {
   }
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route
           path='/login' 
@@ -52,6 +52,6 @@ export const AppRouter = () => {
           }
         />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
