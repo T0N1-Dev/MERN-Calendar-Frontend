@@ -71,8 +71,10 @@ const login = ( user ) => ({
 export const startLogout = () => {
     return (dispatch) => {
         localStorage.clear();
+        dispatch( eventCleaning() );
         dispatch( logout() );
     }
 }
 
 export const logout = () => ({ type: types.authLogout });
+const eventCleaning = () => ({ type: types.eventCleaning });

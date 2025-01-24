@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { LoginScreen } from '../components/auth/LoginScreen'
 import { RegisterScreen } from '../components/auth/RegisterScreen'
 import { CalendarScreen } from '../components/calendar/CalendarScreen'
@@ -22,7 +22,7 @@ export const AppRouter = () => {
   }
 
   return (
-    <BrowserRouter basename="/MERN-Calendar-Frontend">
+    <BrowserRouter>
       <Routes>
         <Route
           path='/login' 
@@ -42,6 +42,14 @@ export const AppRouter = () => {
           element={
             <PrivateRoute isAuthenticated={ !!uid } element={CalendarScreen} />
           } 
+        />
+        <Route 
+          path='*'
+          element={
+            !!uid
+              ? <Navigate to="/" />
+              : <Navigate to="/login" />
+          }
         />
       </Routes>
     </BrowserRouter>
