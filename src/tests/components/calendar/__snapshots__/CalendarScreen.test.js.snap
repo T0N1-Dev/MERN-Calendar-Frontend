@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing on <CalendarScreen /> should match Snapshot 1`] = `
+<div>
+  <div
+    class="navbar navbar-dark bg-dark mb-4"
+  >
+    <span
+      class="navbar-brand mx-3"
+    >
+      <i
+        class="fa-solid fa-user"
+      />
+        
+      Test User
+    </span>
+    <div
+      class="ml-auto"
+    >
+      <button
+        class="btn btn-dark mx-3"
+      >
+        <i
+          class="fa-solid fa-right-from-bracket"
+        />
+          
+        <span>
+          Logout
+        </span>
+      </button>
+    </div>
+  </div>
+  <div
+    data-testid="event-calendar-mock"
+  >
+    <div
+      class="mock-event"
+    >
+      Test Event
+    </div>
+  </div>
+  <div>
+    Mocked Popup
+  </div>
+  <div>
+    Mocked Snackbar
+  </div>
+  <button
+    class="round-button"
+  >
+    <div
+      class="pulse"
+    />
+    <i
+      class="fa-solid fa-plus"
+    />
+  </button>
+</div>
+`;

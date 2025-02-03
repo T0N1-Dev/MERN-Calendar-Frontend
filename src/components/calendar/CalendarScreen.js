@@ -1,7 +1,6 @@
 import React from 'react';
 import { Navbar } from '../ui/Navbar';
 import "@mobiscroll/react/dist/css/mobiscroll.min.css";
-import '@mobiscroll/react/dist/css/mobiscroll.min.css';
 import {
   Button,
   Datepicker,
@@ -301,11 +300,13 @@ export const CalendarScreen = () => {
     dispatch(uiOpenModal());
   }, [color, uid, name, loadPopupForm, dispatch]);
 
+  console.log(eventCalendarData);
   return (
     <>
       <Navbar />
       <Eventcalendar
         clickToCreate={true}
+        // immutableData={true} // good idea to avoid eventCalendarData (a copy of events)
         dragToCreate={true}
         dragToMove={true}
         dragToResize={true}
@@ -314,6 +315,7 @@ export const CalendarScreen = () => {
         onEventCreated={onEventCreated}
         onEventDeleted={onEventDeleted}
         onEventUpdated={onEventUpdated}
+        data-testid="event-calendar-mock"
       />
       <Popup
         display="center"
@@ -369,7 +371,7 @@ export const CalendarScreen = () => {
           </SegmentedGroup>
           {isEdit ? (
             <div className="mbsc-button-group">
-              <Button className="mbsc-button-block" color="danger" variant="outline" onClick={onDeleteClick}>
+              <Button className="mbsc-button-block" color="danger" variant="outline" onClick={onDeleteClick} data-testid="delete-event">
                 Delete event
               </Button>
             </div>

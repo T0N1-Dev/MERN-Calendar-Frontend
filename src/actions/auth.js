@@ -17,7 +17,13 @@ export const startLogin = ( email, password ) => {
                 color: body.color
             }));
         } else {
-            Swal.fire('Error', body.msg, 'error');
+            let errorMessage = 'Error desconocido';
+            if ( body.errors ) {
+                errorMessage = body.errors[0].msg;
+            } else {
+                errorMessage = body.msg
+            }
+            Swal.fire('Error', errorMessage, 'error');
         }
     }
 }

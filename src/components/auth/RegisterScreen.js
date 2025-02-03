@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './login.css';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
@@ -17,15 +17,25 @@ export const RegisterScreen = () => {
     });
 
     const { name, email, password1, password2 } = formRegisterValues;
+    const [loading, setLoading] = useState(false);
 
-    const handleRegister = (e) => {
+    const handleRegister = async (e) => {
         e.preventDefault();
+        setLoading(true);
 
         if ( password1 !== password2 ) {
+            setLoading(false);
             return Swal.fire('Error', 'Both passwords must match', 'error');
         }
 
-        dispatch(startRegister(email, password1, name));
+        try {
+            await dispatch(startRegister(email, password1, name));
+        } catch (error) {
+            return Swal.fire('Error', 'Register Error!', 'error');
+        } finally {
+            setLoading(false);
+        }
+
     }
 
     return (
@@ -81,16 +91,22 @@ export const RegisterScreen = () => {
                     </div>
 
                     <div className="form-group mb-2">
-                        <input 
-                            type="submit" 
-                            className="btnSubmit mb-4" 
-                            value="Register" />
-                        <span>
-                        </span>
-                        <Link to="/login" className="link">
-                            Already registered?
-                        </Link>
+                        <button
+                            type='submit'
+                            className={`btnSubmit mb-4 ${loading ? 'btn-disabled' : ''}`}
+                            disabled={loading}
+                        >
+                            {loading ? (
+                                <div class="spinner-border spinner-border-sm" role="status"></div>
+                            ) : (
+                                'Register'
+                            )}
+                        </button>
                     </div>
+                    
+                    <Link to="/login" className="link">
+                        Already registered?
+                    </Link>
                 </form>
             </div>
         </div>

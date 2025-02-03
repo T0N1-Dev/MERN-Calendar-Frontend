@@ -2,7 +2,6 @@ const baseURL = 'https://mern-calendar-backend-production-91f0.up.railway.app/ap
 
 const fetchWithoutToken = (endpoint, data, method='GET') => {
     const url = `${baseURL}/${endpoint}`;
-
     if ( method === 'GET' ) {
         return fetch( url );
     } else {

@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './login.css';
 import { Link } from 'react-router-dom';
 import { useForm } from '../../hooks/useForm';
 import { useDispatch } from 'react-redux';
 import { startLogin } from '../../actions/auth';
+import Swal from 'sweetalert2';
 
 export const LoginScreen = () => {
 
@@ -14,10 +15,19 @@ export const LoginScreen = () => {
     });
 
     const { email, password } = formLoginValues;
+    const [loading, setLoading] = useState(false);
 
-    const handleLogin = (e) => {
+    const handleLogin = async (e) => {
         e.preventDefault();
-        dispatch(startLogin(email, password));
+        setLoading(true);
+
+        try {
+            await dispatch(startLogin(email, password));
+        } catch (error) {
+            return Swal.fire('Error', 'Login Error!', 'error');
+        } finally {
+            setLoading(false);
+        }
     };
 
     return (
@@ -51,11 +61,17 @@ export const LoginScreen = () => {
                         />
                     </div>
                     <div className="form-group">
-                        <input 
+                        <button
                             type="submit"
-                            className="btnSubmit"
-                            value="Login" 
-                        />
+                            className={`btnSubmit ${loading ? 'btn-disabled' : ''}`}
+                            disabled={loading}
+                        >
+                            {loading ? (
+                                <div class="spinner-border spinner-border-sm" role="status"></div>
+                            ) : (
+                                'Login'
+                            )}
+                        </button>
                     </div>
                     <br></br>
 
