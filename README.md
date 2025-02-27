@@ -3,9 +3,6 @@
 >[!NOTE]
 >If you are in **Cuba**, you will need a **VPN** to authenticate in the application due to restrictions on some services.
 
-## 🌩️ Image Management
-The images used in this project are hosted on **Cloudinary** for better management and to avoid unnecessary backend loads.
-
 ## 📌 Description
 **Calendar App** is a modern and intuitive application for efficiently managing events.
 
@@ -32,10 +29,10 @@ The images used in this project are hosted on **Cloudinary** for better manageme
 ![Main Page](https://res.cloudinary.com/dmfs1od9n/image/upload/v1740682204/CalendarApp_-_Principal_Page_ixk6x2.png)
 
 ### 🔑 Login
-![Login](https://res.cloudinary.com/dmfs1od9n/image/upload/v1740682203/CalendarApp_-Login_vwrdnk.png)
+![Login](https://res.cloudinary.com/dmfs1od9n/image/upload/v1740685353/CalendarApp_-Login_ft0oyu.png)
 
 ### 📝 Register
-![Register](https://res.cloudinary.com/dmfs1od9n/image/upload/v1740682204/CalendarApp_-Register_v8nnd7.png)
+![Register](https://res.cloudinary.com/dmfs1od9n/image/upload/v1740685352/CalendarApp_-Register_xigwln.png)
 
 ---
 
