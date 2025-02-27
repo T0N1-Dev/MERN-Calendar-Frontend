@@ -3,6 +3,10 @@
 >[!NOTE]
 >If you are in **Cuba**, you will need a **VPN** to authenticate in the application due to restrictions on some services.
 
+🚀 **This repository contains the frontend code for the Calendar App.**
+
+👉 If you want to check out the **backend code**, visit the repository here: [MERN-Calendar-Backend](https://github.com/T0N1-Dev/MERN-Calendar-Backend).
+
 ## 📌 Description
 **Calendar App** is a modern and intuitive application for efficiently managing events.
 
