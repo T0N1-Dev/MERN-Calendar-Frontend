@@ -1,19 +1,5 @@
 import { types } from '../types/types';
 
-// {
-//     id: 2,
-//     start: moment().add(5, 'days').format('YYYY-MM-DDTHH:mm'),
-//     end: moment().add(5, 'days').format('YYYY-MM-DDTHH:mm'),
-//     title: 'Conference',
-//     description: '',
-//     allDay: false,
-//     bufferBefore: 30,
-//     free: false,
-//     color: '#ff9900',
-//     user: null
-//   },
-
-
 const initialState = {
     events: [],
     activeEvent: null

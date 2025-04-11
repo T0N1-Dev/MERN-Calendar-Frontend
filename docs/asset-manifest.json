@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/MERN-Calendar-Frontend/static/css/main.bb03895f.css",
-    "main.js": "/MERN-Calendar-Frontend/static/js/main.41ef9359.js",
+    "main.css": "/MERN-Calendar-Frontend/static/css/main.47a4d8f9.css",
+    "main.js": "/MERN-Calendar-Frontend/static/js/main.14d4f257.js",
     "index.html": "/MERN-Calendar-Frontend/index.html",
-    "main.bb03895f.css.map": "/MERN-Calendar-Frontend/static/css/main.bb03895f.css.map",
-    "main.41ef9359.js.map": "/MERN-Calendar-Frontend/static/js/main.41ef9359.js.map"
+    "main.47a4d8f9.css.map": "/MERN-Calendar-Frontend/static/css/main.47a4d8f9.css.map",
+    "main.14d4f257.js.map": "/MERN-Calendar-Frontend/static/js/main.14d4f257.js.map"
   },
   "entrypoints": [
-    "static/css/main.bb03895f.css",
-    "static/js/main.41ef9359.js"
+    "static/css/main.47a4d8f9.css",
+    "static/js/main.14d4f257.js"
   ]
 }

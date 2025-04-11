@@ -2,11 +2,11 @@ import React, { useEffect } from 'react'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { LoginScreen } from '../components/auth/LoginScreen'
 import { RegisterScreen } from '../components/auth/RegisterScreen'
-import { CalendarScreen } from '../components/calendar/CalendarScreen'
 import { useDispatch, useSelector } from 'react-redux'
 import { startChecking } from '../actions/auth';
 import { PublicRoute } from './PublicRoutes'
 import { PrivateRoute } from './PrivateRoutes'
+import CalendarApp from '../components/calendar/CalendarApp'
 
 export const AppRouter = () => {
 
@@ -40,7 +40,7 @@ export const AppRouter = () => {
         <Route  
           path='/' 
           element={
-            <PrivateRoute isAuthenticated={ !!uid } element={CalendarScreen} />
+            <PrivateRoute isAuthenticated={ !!uid } element={CalendarApp} />
           } 
         />
         <Route 

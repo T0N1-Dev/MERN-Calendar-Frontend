@@ -11,7 +11,7 @@
     border: none;
     cursor: pointer;
     outline: none;
-    position: absolute;
+    position: fixed;
     right: 50px;
     bottom: 40px;
     z-index: 1;

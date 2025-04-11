@@ -5,27 +5,22 @@ import { setError } from "./ui";
 
 export const eventStartAddNewEvent = ( event ) => {
     return async ( dispatch ) => {
-        const eventToShow = {
-            ...event,
-            start: new Date(event.start).toLocaleString(),
-            end: new Date(event.end).toLocaleString()
-        };
         
         try {
             const resp = await fetchWithToken('events', event, 'POST');
             const body = await resp.json();
 
             if ( body.ok ) {
-                eventToShow.id = body.event.id;
-                dispatch( eventAddNew( eventToShow ) );
-                dispatch( eventStartSetActive( eventToShow ) );
+                event.id = body.event.id;
+                dispatch( eventAddNew( event ) );
+                dispatch( eventStartSetActive( event ) );
             } else {
                 dispatch( setError(body.msg) );
-                dispatch( eventStartLoading() );
                 Swal.fire('Error', body.msg, 'error');
             }
+            dispatch( eventStartLoading() );
         } catch (err) {
-            console.log(err);
+            console.error(err);
         }
     }
 }
@@ -56,12 +51,13 @@ export const eventStartUpdate = (event) => {
     return async (dispatch) => {
         try {
             const resp = await fetchWithToken(`events/${event.id}`, event, 'PUT');
+            
             const body = await resp.json();
             if (body.ok) {
-                dispatch(eventUpdated({ ...event }));
-                dispatch(eventStartLoading());
+                dispatch(eventUpdated(event));
             } else {
                 dispatch(setError(body.msg));
+                dispatch(eventStartLoading());
                 Swal.fire('Error', body.msg, 'error');
             }
         } catch (err) {
@@ -71,15 +67,14 @@ export const eventStartUpdate = (event) => {
 };
 
 
-const eventUpdated = (event) => ({
+const eventUpdated = (event) => {
+    return {
     type: types.eventUpdate,
     payload: event
-});
+}};
 
-export const eventStartDelete = () => {
-    return async ( dispatch, getState ) => {
-
-        const { id } = getState().calendar.activeEvent;
+export const eventStartDelete = (id) => {
+    return async ( dispatch ) => {
 
         try {
             const resp = await fetchWithToken(`events/${ id }`, {}, 'DELETE');
@@ -89,9 +84,10 @@ export const eventStartDelete = () => {
             } else  {
                 dispatch(setError(body.msg));
                 Swal.fire('Error', body.msg, 'error');
+                dispatch(eventStartLoading());
             }
         } catch (err) {
-            console.log(err);
+            console.error(err);
         }
     }
 }
@@ -105,14 +101,10 @@ export const eventStartLoading = () => {
         try {
             const resp = await fetchWithToken('events');
             const body = await resp.json();
-            const events = body.eventos.map(event => ({
-                ...event,
-                start: new Date(event.start).toLocaleString(),
-                end: new Date(event.end).toLocaleString(),
-            }));
+            const events = body.eventos;
             dispatch( eventLoaded( events ) );
         } catch (err) {
-            console.log(err)
+            console.error(err)
         }
     }
 }
