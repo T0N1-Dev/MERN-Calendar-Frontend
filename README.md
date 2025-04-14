@@ -22,7 +22,7 @@
 | **React Router** | Route management |
 | **Jest**       | Unit testing |
 | **Bootstrap**  | General styles |
-| **Mobiscroll** | Interactive calendar component |
+| **FullCalendar** | Interactive calendar component |
 | **Font Awesome** | Icons |
 | **Animate.css** | FadeIn and fadeOut animations |
 | **SweetAlert** | Alerts and confirmation messages |
